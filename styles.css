@@ -173,12 +173,13 @@ body {
   font-size: 4.4rem;
   font-weight: 800;
   color: white;
-  line-height: 1.12;
+  line-height: 1.15;
   margin-bottom: 24px;
 }
 
 .hero h1 span {
   color: var(--accent);
+  display: block; /* Forces "For You" to its own line */
 }
 
 .hero-desc {
