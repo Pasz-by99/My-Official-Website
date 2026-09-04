@@ -6,9 +6,9 @@
 }
 
 :root {
-  --primary: #0f766e;          /* Teal */
+  --primary: #0f766e;
   --primary-dark: #0d5c56;
-  --accent: #f59e0b;           /* Gold/Amber */
+  --accent: #f59e0b;
   --dark: #0f172a;
   --dark-2: #1e293b;
   --light: #f8fafc;
@@ -123,22 +123,37 @@ body {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f766e 100%);
   overflow: hidden;
   padding-top: 80px;
+  background: #0f172a;
 }
 
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-image: 
-    radial-gradient(circle at 20% 50%, rgba(15, 118, 110, 0.3) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(245, 158, 11, 0.15) 0%, transparent 40%);
-  pointer-events: none;
+  background-image: url('images/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
+
+/* Dark overlay for text readability */
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(15, 23, 42, 0.88) 0%,
+    rgba(15, 23, 42, 0.70) 50%,
+    rgba(15, 23, 42, 0.45) 100%
+  );
 }
 
 .hero-content {
   position: relative;
+  z-index: 2;
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
   gap: 60px;
@@ -167,7 +182,7 @@ body {
 }
 
 .hero-desc {
-  color: #94a3b8;
+  color: #cbd5e1;
   font-size: 1.15rem;
   max-width: 520px;
   margin-bottom: 32px;
@@ -206,7 +221,7 @@ body {
 .btn-outline {
   background: transparent;
   color: white;
-  border: 2px solid rgba(255,255,255,0.3);
+  border: 2px solid rgba(255,255,255,0.35);
 }
 
 .btn-outline:hover {
@@ -220,7 +235,7 @@ body {
   border-radius: 20px;
   padding: 50px 40px;
   text-align: center;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
   color: white;
 }
 
